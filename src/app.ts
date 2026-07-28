@@ -61,9 +61,9 @@ const fullSamplesFlow = addKeyword<Provider, Database>(['samples', utils.setEven
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow, registerFlow, fullSamplesFlow])
     const adapterProvider = createProvider(Provider, {
-        jwtToken: 'EAAO7ZAFYznaABSKP5xcRfgDrlBxXe9ZC2W037Q8bwmBliqaPta6DZAkToGfhxwfm6zE61tHNOZAwLZBAteuN0E7LELed3RLTw5IFgJJZCEJyPz6oCtfeafODiYhhqe8svdvdJs2i18pUG3Nd0avQ5fvW2nDpfPWZAcZBrQeZCyEVfj42tVtdO6v6OZA0ZA3rGyLy6hgbbKTYqysIEirMAWPEiX1YCzyJ91808I5XEXftnZAGNMHg6QUo2OXHjHtyEZBZBYrJAOinWOQVtqZAo92u4zLJMZCoplYLUrBQvEMgT4OzdQZDZD',
-        numberId: '1235916332934883',
-        verifyToken: 'bot1',
+        jwtToken: process.env.jwToken,
+        numberId: process.env.numberId,
+        verifyToken: process.env.verifyToken,
         version: 'v25.0'
     })
     const adapterDB = new Database()
