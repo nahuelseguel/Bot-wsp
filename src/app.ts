@@ -61,7 +61,7 @@ const fullSamplesFlow = addKeyword<Provider, Database>(['samples', utils.setEven
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow, registerFlow, fullSamplesFlow])
     const adapterProvider = createProvider(Provider, {
-        jwtToken: process.env.jwToken,
+        jwtToken: process.env.jwtToken as string,
         numberId: process.env.numberId,
         verifyToken: process.env.verifyToken,
         version: 'v25.0'
