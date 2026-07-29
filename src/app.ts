@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { join } from 'path'
 import { createBot, createProvider, createFlow, addKeyword, utils } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
@@ -124,5 +125,9 @@ const main = async () => {
 
     httpServer(+PORT)
 }
+
+process.on('unhandledRejection', (err) => {
+    console.error('Unhandled error (non-fatal):', err?.message || err)
+})
 
 main()
