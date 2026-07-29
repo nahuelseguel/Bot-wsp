@@ -69,6 +69,12 @@ const main = async () => {
     })
     const adapterDB = new Database()
 
+    adapterProvider.server.use((req, _, next) => {
+        const timestamp = new Date().toISOString().slice(11, 19)
+        console.log(`[${timestamp}] ${req.method} ${req.url}`)
+        next()
+    })
+
     const { handleCtx, httpServer } = await createBot({
         flow: adapterFlow,
         provider: adapterProvider,
