@@ -75,6 +75,21 @@ const main = async () => {
         next()
     })
 
+    adapterProvider.on('message', (msg) => {
+        const timestamp = new Date().toISOString().slice(11, 19)
+        console.log(`[${timestamp}] [EVENT message] from:${msg.from} body:${msg.body}`)
+    })
+
+    adapterProvider.on('notice', ({ title, instructions }) => {
+        const timestamp = new Date().toISOString().slice(11, 19)
+        console.log(`[${timestamp}] [NOTICE] ${title} - ${instructions?.join(', ')}`)
+    })
+
+    adapterProvider.on('ready', () => {
+        const timestamp = new Date().toISOString().slice(11, 19)
+        console.log(`[${timestamp}] [READY] Provider is ready`)
+    })
+
     const { handleCtx, httpServer } = await createBot({
         flow: adapterFlow,
         provider: adapterProvider,
