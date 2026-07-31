@@ -69,27 +69,6 @@ const main = async () => {
     })
     const adapterDB = new Database()
 
-    adapterProvider.server.use((req, _, next) => {
-        const timestamp = new Date().toISOString().slice(11, 19)
-        console.log(`[${timestamp}] ${req.method} ${req.url}`)
-        next()
-    })
-
-    adapterProvider.on('message', (msg) => {
-        const timestamp = new Date().toISOString().slice(11, 19)
-        console.log(`[${timestamp}] [EVENT message] from:${msg.from} body:${msg.body}`)
-    })
-
-    adapterProvider.on('notice', ({ title, instructions }) => {
-        const timestamp = new Date().toISOString().slice(11, 19)
-        console.log(`[${timestamp}] [NOTICE] ${title} - ${instructions?.join(', ')}`)
-    })
-
-    adapterProvider.on('ready', () => {
-        const timestamp = new Date().toISOString().slice(11, 19)
-        console.log(`[${timestamp}] [READY] Provider is ready`)
-    })
-
     const { handleCtx, httpServer } = await createBot({
         flow: adapterFlow,
         provider: adapterProvider,
@@ -99,6 +78,7 @@ const main = async () => {
     adapterProvider.server.post(
         '/v1/messages',
         handleCtx(async (bot, req, res) => {
+            console.log("hola");
             const { number, message, urlMedia } = req.body
             await bot.sendMessage(number, message, { media: urlMedia ?? null })
             return res.end('sended')
