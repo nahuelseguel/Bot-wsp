@@ -26,8 +26,8 @@ const menuFlow = addKeyword(EVENTS.ACTION).addAction(
                             },
                             {
                                 id: "NS2706972",
-                                title: "Imagen",
-                                description: "Quieo recibir una imagen"
+                                title: "Carta",
+                                description: "Quieo ver la carta"
                             },
                             {
                                 id: "NS2706973",
