@@ -8,7 +8,6 @@ import templates from "./templates";
 const PORT = process.env.PORT ?? 3008   
 
 const main = async () => {
-    // const adapterFlow = createFlow([])
     const adapterProvider = createProvider(Provider, {
         jwtToken: process.env.jwtToken as string,
         numberId: process.env.numberId,

@@ -13,7 +13,7 @@ const mainFlow = addKeyword ([
     }
 
     await ctxFn.flowDynamic(
-        "Bienvenido al Cha-tbot"
+        "Bienvenido al Cha-tbot el horario de atencion es: Martes a Domingo: 11hs a 23hs"
     );
     return ctxFn.gotoFlow(menuFlow);
 });

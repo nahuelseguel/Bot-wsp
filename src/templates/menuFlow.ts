@@ -1,5 +1,16 @@
 import { addKeyword, EVENTS } from "@builderbot/bot";
+//estructura ejemplo
+// 📋 Ver Carta y Promos (Ver menú / filtrar por vegetarianos, TACC)
 
+// 🛵 Hacer Pedido (Delivery o Retiro por local)
+
+// 📅 Reservar Mesa
+
+// 🎊 Eventos y Cumpleaños
+
+// 📍 Ubicación, Horarios y Medios de Pago
+
+// 👤 Hablar con la Sucursal
 const menuFlow = addKeyword(EVENTS.ACTION).addAction(
     async (ctx, { provider }) => {
         const list = {
@@ -21,18 +32,28 @@ const menuFlow = addKeyword(EVENTS.ACTION).addAction(
                         rows: [
                             {
                                 id: "NS2706971",
-                                title: "Audio",
+                                title: "📋 Ver Carta",
                                 description: "Quieo escuchar un audio"
                             },
                             {
                                 id: "NS2706972",
-                                title: "Carta",
-                                description: "Quieo ver la carta"
+                                title: "🛵 Hacer Pedido",
+                                description: "Quieo hacer un pedido"
                             },
                             {
                                 id: "NS2706973",
-                                title: "PDF",
-                                description: "Quieo recibir un PDF"
+                                title: "📅 Reservar Mesa",
+                                description: "Quieo reservar una mesa"
+                            },
+                            {
+                                id: "NS2706974",
+                                title: "📍 Ubicación y horarios",
+                                description: "Quieo ver info del local"
+                            },
+                            {
+                                id: "NS2706975",
+                                title: "👤 Hablar con Sucursal",
+                                description: "Quieo hablar con el personal"
                             },
                         ],
                     },
