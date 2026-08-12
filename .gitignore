@@ -5,6 +5,7 @@ node_modules
 *_sessions
 *tokens
 .wwebjs*
+google-credentials.json
 
 *.log
 *qr.png

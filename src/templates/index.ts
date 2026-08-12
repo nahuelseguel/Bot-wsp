@@ -4,6 +4,7 @@ import { menuFlow } from "./menuFlow";
 import { imageFlow } from "./imageFlow";
 import { sendCard } from "./list_templates/sendCard";
 import { sendInfo } from "./list_templates/sendInfo";
+import { reserve } from "./list_templates/reserve";
 
 export default createFlow ([
     mainFlow,
@@ -11,4 +12,5 @@ export default createFlow ([
     imageFlow,
     sendCard,
     sendInfo,
+    reserve,
 ]);
